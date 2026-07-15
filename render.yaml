@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: hotdeals-telegram-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: PRODUCTS_COUNT
+        value: "3"
+      - key: CANDIDATE_COUNT
+        value: "50"
+      - key: DEFAULT_CURRENCY
+        value: USD
+      - key: DEFAULT_LANGUAGE
+        value: EN
+      - key: CACHE_TTL_SECONDS
+        value: "600"
+      - key: REQUEST_COOLDOWN_SECONDS
+        value: "3"
+      - key: LOG_LEVEL
+        value: INFO
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: ALIEXPRESS_APP_KEY
+        sync: false
+      - key: ALIEXPRESS_APP_SECRET
+        sync: false
+      - key: ALIEXPRESS_TRACKING_ID
+        sync: false
