@@ -1,0 +1,1 @@
+"""hotdeals Telegram bot package."""
